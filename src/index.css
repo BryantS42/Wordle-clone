@@ -1,5 +1,11 @@
+html{
+  margin: 0;
+  height: 100%;
+}
 body {
   margin: 0;
+  height: 100%;
+  background-image: url('./components/img/galaxybg.jpg');
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +16,44 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1{
+  border: 2px solid purple;
+  color: goldenrod;
+  font-style: oblique;
+}
+
+.row{
+  display: flex;
+}
+
+.box{
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 3px;
+  margin: 2px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.board{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  gap: .25em;
+  margin-bottom: 1em;
+  margin-top: 10px;
+}
+
+#keyboard-cont{
+  justify-content: center;
+  align-items: center;
 }

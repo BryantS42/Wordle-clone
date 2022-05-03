@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import Table from './components/table-container';
+import Keyboard from './components/keyboard-container';
+import { Component } from 'react';
 
-function App() {
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {kValue:"", colorValue: "", kbString: ""}
+  }
+
+  handleKBChange = (input) =>{
+    this.setState({kValue: input});
+    //console.log("input: " +this.state.kValue);
+  }
+
+  changeKBColor = (input) =>{
+    console.log("color: "+input.color);
+    this.setState({colorValue: input.color, kbString: input.kbValue});
+    
+  }
+
+  render(){ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" id="App">
+      <Table userValue = {this.state.kValue}/>
+      <Keyboard keyChange = {this.handleKBChange} cValue = {this.state.colorValue} kValue = {this.state.kbString}/>
     </div>
   );
+}
 }
 
 export default App;
